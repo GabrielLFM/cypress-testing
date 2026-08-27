@@ -75,9 +75,17 @@ describe("form", () => {
 
       cy.contains('button[type=submit]', 'Enviar formulário').click() 
 
-      cy.contains('Digite nome e sobrenome').should('be.visible')
-      cy.contains('Informe um email válido').should('be.visible')
-      cy.contains('Você precisa aceitar os termos de uso').should('be.visible')
+      cy.contains('Digite nome e sobrenome')
+      .and('have.css', 'color','rgb(248, 113, 113)')
+      .should('be.visible')
+
+      cy.contains('Informe um email válido')
+      .and('have.css', 'color','rgb(248, 113, 113)')
+      .should('be.visible')
+
+      cy.contains('Você precisa aceitar os termos de uso')
+      .and('have.css', 'color','rgb(248, 113, 113)')
+      .should('be.visible')
     });
 
 });
